@@ -1,0 +1,13 @@
+streamed_assets.cfg
+keys.cfg
+cache
+db
+
+# resources
+resources/\[maps\]
+resources/DoluMappingTool
+resources/gizmo
+
+# **/.vscode
+**/node_modules
+*.code-workspace

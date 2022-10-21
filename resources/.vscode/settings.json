@@ -1,0 +1,13 @@
+{
+    "Lua.diagnostics.disable": [
+        "lowercase-global",
+        "undefined-field",
+        "undefined-global",
+        "missing-parameter",
+        "unbalanced-assignments",
+        "undefined-doc-name",
+        "param-type-mismatch",
+        "need-check-nil",
+        "return-type-mismatch"
+    ]
+}
