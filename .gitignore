@@ -11,3 +11,5 @@ resources/gizmo
 # **/.vscode
 **/node_modules
 *.code-workspace
+
+*.log
