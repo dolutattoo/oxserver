@@ -1,0 +1,8 @@
+[submodule "DoluMappingTool"]
+	path = resources/[miscs]/DoluMappingTool
+	url = https://github.com/dolutattoo/DoluMappingTool.git
+
+[submodule "dolu_hud"]
+	path = resources/[miscs]/dolu_hud
+	url = https://github.com/dolutattoo/dolu_hud.git
+
