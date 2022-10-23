@@ -7,7 +7,7 @@
 	url = https://github.com/dolutattoo/dolu_hud.git
 
 [submodule "fivem-appearance"]
-	path = resources/[ox]/appearance
+	path = resources/[ox]/fivem-appearance
 	url = https://github.com/pedr0fontoura/fivem-appearance.git
 
 [submodule "ox_appearance"]
