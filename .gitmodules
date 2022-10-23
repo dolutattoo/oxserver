@@ -6,3 +6,55 @@
 	path = resources/[miscs]/dolu_hud
 	url = https://github.com/dolutattoo/dolu_hud.git
 
+[submodule "fivem-appearance"]
+	path = resources/[ox]/appearance
+	url = https://github.com/pedr0fontoura/fivem-appearance.git
+
+[submodule "ox_appearance"]
+	path = resources/[ox]/ox_appearance
+	url = https://github.com/overextended/ox_appearance.git
+
+[submodule "ox_commands"]
+	path = resources/[ox]/ox_commands
+	url = https://github.com/overextended/ox_commands.git
+
+[submodule "ox_core"]
+	path = resources/[ox]/ox_core
+	url = https://github.com/overextended/ox_core.git
+
+[submodule "ox_doorlock"]
+	path = resources/[ox]/ox_doorlock
+	url = https://github.com/overextended/ox_doorlock.git
+
+[submodule "ox_fuel"]
+	path = resources/[ox]/ox_fuel
+	url = https://github.com/overextended/ox_fuel.git
+
+[submodule "ox_inventory"]
+	path = resources/[ox]/ox_inventory
+	url = https://github.com/overextended/ox_inventory.git
+
+[submodule "ox_lib"]
+	path = resources/[ox]/ox_lib
+	url = https://github.com/overextended/ox_lib.git
+
+[submodule "ox_police"]
+	path = resources/[ox]/ox_police
+	url = https://github.com/overextended/ox_police.git
+
+[submodule "ox_property"]
+	path = resources/[ox]/ox_property
+	url = https://github.com/overextended/ox_property.git
+
+[submodule "ox_target"]
+	path = resources/[ox]/ox_target
+	url = https://github.com/overextended/ox_target.git
+
+[submodule "ox_vehicledealer"]
+	path = resources/[ox]/ox_vehicledealer
+	url = https://github.com/overextended/ox_vehicledealer.git
+
+[submodule "oxmysql"]
+	path = resources/[ox]/oxmysql
+	url = https://github.com/overextended/oxmysql.git
+
