@@ -1,7 +1,7 @@
 [submodule "DoluMappingTool"]
 	path = resources/[miscs]/DoluMappingTool
 	url = https://github.com/dolutattoo/DoluMappingTool.git
-  branch = main
+  branch = master
 
 [submodule "dolu_hud"]
 	path = resources/[miscs]/dolu_hud
