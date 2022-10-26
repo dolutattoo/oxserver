@@ -1,4 +1,4 @@
-@REM version 0.3.0
+@REM version 0.4.0
 @echo off
 
 title Resource Builder
@@ -17,16 +17,32 @@ set resources=%cd%
 
    if %cd%==%resources% (
       set count=1
-      set options[1]=build mode
+      set options[1]=build all
    ) else (
       set count=2
       set options[1]=return
-      set options[2]=build mode
+      set options[2]=build all
    )
 
    call :loop1
 
-   call :echooptions
+   for /l %%x in (1,1,!count!) do (
+      if exist !options[%%x]! (
+         cd !options[%%x]!
+
+         call :buildcheck check
+
+         if errorlevel 1 (
+            echo [%%x] !options[%%x]! ^| build
+         ) else (
+            echo [%%x] !options[%%x]!
+         )
+
+         cd ..
+      ) else (
+         echo [%%x] !options[%%x]!
+      )
+   )
 
    call :input :navigatemenu
 
@@ -35,63 +51,21 @@ set resources=%cd%
       call :navigatemenu
    )
 
-   if "!options[%choose%]!"=="build mode" (
-      call :buildmenu
-   ) else (
-      set resourcename=!options[%choose%]!
-      cd !options[%choose%]!
-      call :navigatemenu
-   )
-exit /b 0
-
-:buildmenu
-   echo.
-   cd
-
-   if %cd%==%resources% (
-      set count=2
-      set options[1]=navigate mode
-      set options[2]=build all
-   ) else (
-      set count=3
-      set options[1]=return
-      set options[2]=navigate mode
-      set options[3]=build all
-   )
-
-   call :loop1
-
-   call :echooptions
-
-   call :input :buildmenu
-
-   if !options[%choose%]!==return (
-      cd ..
-      call :buildmenu
-   )
-
-   if "!options[%choose%]!"=="navigate mode" (
-      call :navigatemenu
-   )
-
    if "!options[%choose%]!"=="build all" (
-      set count=0
-
-      call :loop1
-
-      set buildcount=!count!
-      for /l %%x in (1,1,!buildcount!) do (
-         set tobuild[%%x]=!options[%%x]!
-      )
-
+      set all=true
       call :managermenu
    ) else (
-      set resourcename=!options[%choose%]!
       cd !options[%choose%]!
 
-      set buildcount=0
+      call :buildcheck check
 
-      call :managermenu
+      if errorlevel 1 (
+         set all=false
+         set resourcename=!options[%choose%]!
+         call :managermenu
+      ) else (
+         call :navigatemenu
+      )
    )
 exit /b 0
 
@@ -104,27 +78,41 @@ exit /b 0
    set options[2]=pnpm
    set options[3]=yarn
 
-   call :echooptions
+   for /l %%x in (1,1,!count!) do (
+      echo [%%x] !options[%%x]!
+   )
 
    call :input :managermenu
 
    if !options[%choose%]!==cancel (
-      call :buildmenu
+      if %all%==false cd ..
+      call :navigatemenu
    ) else (
-      if /i %buildcount% gtr 0 (
-         if exist package.json call :build
+      set manager=!options[%choose%]!
+      if %all%==true (
+         set count=0
+         call :loop1
 
-         for /l %%x in (1,1,!buildcount!) do (
-            set resourcename=!tobuild[%%x]!
-            cd !tobuild[%%x]!
-            call :buildcycle
+         for /l %%x in (1,1,!count!) do (
+            cd !options[%%x]!
+            call :buildcheck check
+
+            if errorlevel 1 (
+               set resourcename=!options[%%x]!
+               call :buildcheck build
+            ) else (
+               call :findresources
+            )
+
+            cd ..
          )
-
+      ) else (
+         call :buildcheck build
          cd ..
-      ) else call :buildcycle
+      )
    )
 
-   call :buildmenu
+   call :navigatemenu
 exit /b 0
 
 :loop1
@@ -163,9 +151,32 @@ exit /b 0
    )
 exit /b 0
 
-:echooptions
-   for /l %%x in (1,1,!count!) do (
-      echo [%%x] !options[%%x]!
+:buildcheck
+   if exist fxmanifest.lua (
+      set subfolder=
+      if exist package.json (
+         if %~1==build (
+            call :build
+         ) else (
+            exit /b 1
+         )
+      ) else (
+         for /d %%y in (*) do (
+            if not %%y==node_modules (
+               cd %%y
+               set subfolder=\%%y
+               if exist package.json (
+                  if %~1==build (
+                     call :build
+                  ) else (
+                     cd ..
+                     exit /b 1
+                  )
+               )
+               cd ..
+            )
+         )
+      )
    )
 exit /b 0
 
@@ -191,12 +202,12 @@ exit /b 0
 exit /b 0
 
 :build
-   if !options[%choose%]!==pnpm (
-      set command1=!options[%choose%]! i
+   if %manager%==pnpm (
+      set command1=%manager% i
    ) else (
-      set command1=!options[%choose%]!
+      set command1=%manager%
    )
-   set command2=!options[%choose%]! build
+   set command2=%manager% build
 
    @echo on
    @echo.
@@ -212,19 +223,27 @@ exit /b 0
    echo.
 exit /b 0
 
-:buildcycle
-   set subfolder=
-   if exist package.json call :build
-
+:findresources
    for /d %%y in (*) do (
-      set subfolder=\%%y
       cd %%y
-
-      if exist package.json (
-         call :build
+      if exist fxmanifest.lua (
+         set resourcename=%%y
+         if exist package.json (
+            call :buildcheck build
+         ) else (
+            set buildable=false
+            for /d %%z in (*) do (
+               if not %%z==node_modules (
+                  cd %%z
+                  if exist package.json set buildable=true
+                  cd ..
+               )
+            )
+            if %buildable%==true call :buildcheck build
+         )
+      ) else (
+         call :findresources
       )
       cd ..
    )
-
-   cd ..
 exit /b 0

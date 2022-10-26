@@ -4,6 +4,8 @@
         "undefined-field",
         "undefined-global",
         "missing-parameter",
-        "param-type-mismatch"
+        "param-type-mismatch",
+        "unbalanced-assignments",
+        "undefined-doc-name"
     ]
 }
