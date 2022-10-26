@@ -3,11 +3,6 @@
 	url = https://github.com/dolutattoo/DoluMappingTool.git
   branch = master
 
-[submodule "dolu_hud"]
-	path = resources/[miscs]/dolu_hud
-	url = https://github.com/dolutattoo/dolu_hud.git
-  branch = main
-
 [submodule "fivem-appearance"]
 	path = resources/[ox]/fivem-appearance
 	url = https://github.com/pedr0fontoura/fivem-appearance.git
@@ -72,4 +67,6 @@
 	path = resources/[ox]/oxmysql
 	url = https://github.com/overextended/oxmysql.git
   branch = main
-
+[submodule "resources/[ox]/dolu_hud"]
+	path = resources/[ox]/dolu_hud
+	url = https://github.com/dolutattoo/dolu_hud.git
