@@ -67,6 +67,8 @@
 	path = resources/[ox]/oxmysql
 	url = https://github.com/overextended/oxmysql.git
   branch = main
-[submodule "resources/[ox]/dolu_hud"]
+
+[submodule "dolu_hud"]
 	path = resources/[ox]/dolu_hud
 	url = https://github.com/dolutattoo/dolu_hud.git
+  branch = main
