@@ -1,74 +1,74 @@
 [submodule "DoluMappingTool"]
 	path = resources/[miscs]/DoluMappingTool
 	url = https://github.com/dolutattoo/DoluMappingTool.git
-  branch = master
+  	branch = v4
 
 [submodule "fivem-appearance"]
 	path = resources/[ox]/fivem-appearance
 	url = https://github.com/pedr0fontoura/fivem-appearance.git
-  branch = main
+  	branch = main
 
 [submodule "ox_appearance"]
 	path = resources/[ox]/ox_appearance
 	url = https://github.com/overextended/ox_appearance.git
-  branch = main
+  	branch = main
 
 [submodule "ox_commands"]
 	path = resources/[ox]/ox_commands
 	url = https://github.com/overextended/ox_commands.git
-  branch = main
+  	branch = main
 
 [submodule "ox_core"]
 	path = resources/[ox]/ox_core
 	url = https://github.com/overextended/ox_core.git
-  branch = main
+  	branch = main
 
 [submodule "ox_doorlock"]
 	path = resources/[ox]/ox_doorlock
 	url = https://github.com/overextended/ox_doorlock.git
-  branch = main
+  	branch = main
 
 [submodule "ox_fuel"]
 	path = resources/[ox]/ox_fuel
 	url = https://github.com/overextended/ox_fuel.git
-  branch = main
+  	branch = main
 
 [submodule "ox_inventory"]
 	path = resources/[ox]/ox_inventory
 	url = https://github.com/overextended/ox_inventory.git
-  branch = main
+  	branch = main
 
 [submodule "ox_lib"]
 	path = resources/[ox]/ox_lib
 	url = https://github.com/overextended/ox_lib.git
-  branch = master
+  	branch = master
 
 [submodule "ox_police"]
 	path = resources/[ox]/ox_police
 	url = https://github.com/overextended/ox_police.git
-  branch = main
+  	branch = main
 
 [submodule "ox_property"]
 	path = resources/[ox]/ox_property
 	url = https://github.com/overextended/ox_property.git
-  branch = main
+  	branch = main
 
 [submodule "ox_target"]
 	path = resources/[ox]/ox_target
 	url = https://github.com/overextended/ox_target.git
-  branch = main
+  	branch = main
 
 [submodule "ox_vehicledealer"]
 	path = resources/[ox]/ox_vehicledealer
 	url = https://github.com/overextended/ox_vehicledealer.git
-  branch = main
+  	branch = main
 
 [submodule "oxmysql"]
 	path = resources/[ox]/oxmysql
 	url = https://github.com/overextended/oxmysql.git
-  branch = main
+  	branch = main
 
 [submodule "dolu_hud"]
 	path = resources/[ox]/dolu_hud
 	url = https://github.com/dolutattoo/dolu_hud.git
-  branch = main
+  	branch = main
