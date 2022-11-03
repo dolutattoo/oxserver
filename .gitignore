@@ -1,10 +1,10 @@
-stream.cfg
+# stream.cfg
 keys.cfg
 cache
 db
 
 # resources
-resources/\[stream\]
+resources/\[stream\]/\[maps\]
 resources/DoluMappingTool
 resources/gizmo
 
