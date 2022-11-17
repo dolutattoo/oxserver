@@ -6,6 +6,7 @@
         "missing-parameter",
         "param-type-mismatch",
         "unbalanced-assignments",
-        "undefined-doc-name"
+        "undefined-doc-name",
+        "redundant-parameter"
     ]
 }
