@@ -14,3 +14,5 @@ resources/gizmo
 *.code-workspace
 
 *.log
+
+resources/\[template\]/
