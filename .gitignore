@@ -5,15 +5,12 @@ cache
 db
 
 # resources
-resources/\[stream\]/\[maps\]
-resources/DoluMappingTool
-resources/gizmo
+resources/\[stream\]/
+resources/\[template\]/
+gizmo
 
 # **/.vscode
 **/node_modules
 *.code-workspace
 
 *.log
-
-resources/\[stream\]/
-resources/\[template\]/
