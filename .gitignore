@@ -15,4 +15,5 @@ resources/gizmo
 
 *.log
 
+resources/\[stream\]/
 resources/\[template\]/
