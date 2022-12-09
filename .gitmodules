@@ -1,8 +1,3 @@
-[submodule "DoluMappingTool"]
-	path = resources/[miscs]/DoluMappingTool
-	url = https://github.com/dolutattoo/DoluMappingTool.git
-  	branch = v4
-
 [submodule "fivem-appearance"]
 	path = resources/[ox]/fivem-appearance
 	url = https://github.com/pedr0fontoura/fivem-appearance.git
