@@ -7,6 +7,7 @@ db
 # resources
 resources/\[stream\]/
 resources/\[template\]/
+resources/\[miscs\]/DoluMappingTool
 gizmo
 
 # **/.vscode
@@ -14,3 +15,4 @@ gizmo
 *.code-workspace
 
 *.log
+
