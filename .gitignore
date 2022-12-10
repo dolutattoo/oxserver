@@ -1,8 +1,11 @@
-# stream.cfg
-database.cfg
-keys.cfg
 cache
 db
+*.log
+
+# configs
+stream.cfg
+database.cfg
+keys.cfg
 
 # resources
 resources/\[stream\]/
@@ -13,6 +16,4 @@ gizmo
 # **/.vscode
 **/node_modules
 *.code-workspace
-
-*.log
 
